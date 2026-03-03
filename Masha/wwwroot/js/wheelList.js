@@ -42,6 +42,7 @@
         .then((response) => {
             document.getElementById('items').insertAdjacentHTML('beforeend', response);
             input.value = '';
+            this.drawWheel();
         });
     }
 
