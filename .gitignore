@@ -1,2 +1,7 @@
 /.vs
+/Masha/bin
 /Masha/obj
+/DataAccess/bin
+/DataAccess/obj
+/Domain/bin
+/Domain/obj
