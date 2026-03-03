@@ -27,21 +27,27 @@
 
     addItem() {
         const listGuid = document.getElementById('wheel').dataset.listGuid;
-        const input = document.getElementById('item-title-input');
-        const newItemTitle = input.value;
+
+        const titleInput = document.getElementById('item-title-input');
+        const title = titleInput.value;
+
+        const definitionInput = document.getElementById('item-definition-input');
+        const definition = definitionInput.value;
 
         $.ajax({
             url: '/Wheel?handler=AddItem',
             method: 'POST',
             data: {
                 listGuid: listGuid,
-                newItemTitle: newItemTitle,
+                title: title,
+                definition: definition,
                 __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
             }
         })
         .then((response) => {
             document.getElementById('items').insertAdjacentHTML('beforeend', response);
-            input.value = '';
+            titleInput.value = '';
+            definitionInput.value = '';
             this.drawWheel();
         });
     }

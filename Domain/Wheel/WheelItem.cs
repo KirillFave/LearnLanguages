@@ -6,5 +6,6 @@ public class WheelItem
     public Guid ListGuid { get; set; }
     public virtual WheelList? List { get; set; }
     public required string Title { get; set; }
+    public required string Definition { get; set; }
     public bool IsInactive { get; set; }
 }

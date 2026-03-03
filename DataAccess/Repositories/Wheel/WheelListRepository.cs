@@ -28,13 +28,14 @@ public class WheelListRepository(DatabaseContext databaseContext)
         return list;
     }
 
-    public WheelItem AddItem(Guid listGuid, string newItemTitle)
+    public WheelItem AddItem(Guid listGuid, string title, string definition)
     {
         GetById(listGuid);
 
         WheelItem item = new() { 
             ListGuid = listGuid,
-            Title = newItemTitle
+            Title = title,
+            Definition = definition
         };
 
         databaseContext.WheelItems.Add(item);

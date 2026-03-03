@@ -44,9 +44,9 @@ public class WheelModel(
         return new OkObjectResult(rendered);
     }
 
-    public IActionResult OnPostAddItem(Guid listGuid, string newItemTitle)
+    public IActionResult OnPostAddItem(Guid listGuid, string title, string definition)
     {
-        WheelItem item = listRepository.AddItem(listGuid, newItemTitle);
+        WheelItem item = listRepository.AddItem(listGuid, title, definition);
 
         string rendered = viewRendererService.RenderViewToStringAsync("_WheelItem", item)
             .GetAwaiter()
