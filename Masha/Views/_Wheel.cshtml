@@ -1,0 +1,66 @@
+﻿@using Domain.Wheel
+
+@model WheelList
+
+<div id="wheel" data-list-guid="@Model.Guid">
+    <!-- Карточка с заголовком -->
+    <div class="card border-0 shadow-lg overflow-hidden bg-white w-50">
+            <div class="card-body p-4">
+
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <div class="bg-primary bg-gradient rounded-3 p-3 text-white">
+                        <i class="bi bi-dice-6-fill" style="font-size: 1.8rem;"></i>
+                    </div>
+                    <h2 class="fw-bold mb-0 text-dark">@Model.Name</h2>
+                </div>
+
+                <!-- Вращающееся колесо + маркер -->
+                <div class="wheel-container">
+                    <div class="marker"><i class="bi bi-caret-down-fill"></i></div>
+                    <canvas id="wheelCanvas" width="600" height="600"></canvas>
+                </div>
+
+                <!-- Доп. информация: результат последнего вращения -->
+                <div class="mt-4 text-center text-secondary bg-light rounded-4 py-2 px-3 small">
+                    <i class="bi bi-info-circle-fill me-1"></i>
+                    Последний сектор: <span id="lastSectorLabel" class="fw-semibold text-dark">—</span>
+                </div>
+            </div>
+        </div>
+
+    <div class="card border-0 shadow-lg overflow-hidden bg-white w-50">
+        <div class="card-body p-4 d-flex flex-column gap-2">
+            <div class="card">
+                <ul id="items" class="list-group list-group-flush">
+                    @foreach(WheelItem item in Model.Items!)
+                    {
+                        @await Html.PartialAsync("_WheelItem", item)
+                    }
+                </ul>
+            </div>
+
+            <input id="item-title-input"
+                   class="form-control form-control-sm"
+                   type="text"
+                   placeholder="Введите слово"
+                   aria-label=".form-control-sm example">
+
+            <button id="add-item-btn"
+                    class="btn btn-sm btn-success"
+                    onclick="wheelList.addItem()">
+                Добавить слово
+            </button>
+
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary px-4"
+                        id="spinButton"
+                        onclick="wheelList.spin()">
+                    <i class="bi bi-arrow-repeat me-1"></i>Вращать
+                </button>
+                <button class="btn btn-sm btn-outline-secondary px-3" id="resetButton">
+                    <i class="bi bi-stop-circle"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@page
+@using Domain.Wheel
+@model WheelModel
+@{
+    ViewData["Title"] = "Казино-рояль";
+}
+
+<div id="sidebar">
+    <select id="select-wheel"
+            class="form-select"
+            aria-label="Default select example">
+        <option value="0" selected>Выберите</option>
+        @foreach (WheelList list in Model.Lists!)
+        {
+            <option value="@list.Guid">@list.Name</option>
+        }
+    </select>
+
+    <input id="new-list-name"
+           class="form-control"
+           type="text"
+           placeholder="Наименование нового списка"
+           aria-label="default input example">
+
+    <button id="add-wheel-list-btn"
+            class="btn btn-success"
+            onclick="wheelList.add()">
+        Добавить список
+    </button>
+</div>
+
+<div id="wheel">
+
+</div>
+

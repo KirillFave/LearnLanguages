@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\young\\Documents\\GitHub\\Masha\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2568F37B-B299-41C2-B1D1-A817F628EDED}|..\\DataAccess\\DataAccess.csproj|c:\\users\\young\\documents\\github\\dataaccess\\databasecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2568F37B-B299-41C2-B1D1-A817F628EDED}|..\\DataAccess\\DataAccess.csproj|c:\\users\\young\\documents\\github\\dataaccess\\dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|c:\\users\\young\\documents\\github\\masha\\masha.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|solutionrelative:masha.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|c:\\users\\young\\documents\\github\\masha\\pages\\wheel.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|solutionrelative:pages\\wheel.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2568F37B-B299-41C2-B1D1-A817F628EDED}|..\\DataAccess\\DataAccess.csproj|c:\\users\\young\\documents\\github\\dataaccess\\repositories\\wheel\\wheellistrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|c:\\users\\young\\documents\\github\\masha\\pages\\wheel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|solutionrelative:pages\\wheel.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|c:\\users\\young\\documents\\github\\masha\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C2D72CA-BCF5-43B5-A674-F2B5FA40D2D7}|Masha.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7B7BFF-3206-4CD9-B66B-72D6EB8A660C}|..\\Domain\\Domain.csproj|c:\\users\\young\\documents\\github\\domain\\wheel\\wheelitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8B7B7BFF-3206-4CD9-B66B-72D6EB8A660C}|..\\Domain\\Domain.csproj|c:\\users\\young\\documents\\github\\domain\\wheel\\wheellist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T16:39:31.183Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DatabaseContext.cs",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\DataAccess\\DatabaseContext.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\DatabaseContext.cs",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\DataAccess\\DatabaseContext.cs",
+              "RelativeToolTip": "..\\DataAccess\\DatabaseContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T16:41:29.882Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Masha",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Masha.csproj",
+              "RelativeDocumentMoniker": "Masha.csproj",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Masha.csproj",
+              "RelativeToolTip": "Masha.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-14T17:42:33.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataAccess",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\DataAccess\\DataAccess.csproj",
+              "RelativeDocumentMoniker": "..\\DataAccess\\DataAccess.csproj",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\DataAccess\\DataAccess.csproj",
+              "RelativeToolTip": "..\\DataAccess\\DataAccess.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-14T17:41:54.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WheelListRepository.cs",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\DataAccess\\Repositories\\Wheel\\WheelListRepository.cs",
+              "RelativeDocumentMoniker": "..\\DataAccess\\Repositories\\Wheel\\WheelListRepository.cs",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\DataAccess\\Repositories\\Wheel\\WheelListRepository.cs",
+              "RelativeToolTip": "..\\DataAccess\\Repositories\\Wheel\\WheelListRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T17:14:55.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Wheel.cshtml",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Pages\\Wheel.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Wheel.cshtml",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Pages\\Wheel.cshtml",
+              "RelativeToolTip": "Pages\\Wheel.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAwAkAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-14T17:13:09.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Wheel.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Pages\\Wheel.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Wheel.cshtml.cs",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\Masha\\Pages\\Wheel.cshtml.cs",
+              "RelativeToolTip": "Pages\\Wheel.cshtml.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAowA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T17:13:26.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "WheelItem.cs",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\Domain\\Wheel\\WheelItem.cs",
+              "RelativeDocumentMoniker": "..\\Domain\\Wheel\\WheelItem.cs",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\Domain\\Wheel\\WheelItem.cs",
+              "RelativeToolTip": "..\\Domain\\Wheel\\WheelItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T16:57:11.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WheelList.cs",
+              "DocumentMoniker": "C:\\Users\\young\\Documents\\GitHub\\Domain\\Wheel\\WheelList.cs",
+              "RelativeDocumentMoniker": "..\\Domain\\Wheel\\WheelList.cs",
+              "ToolTip": "C:\\Users\\young\\Documents\\GitHub\\Domain\\Wheel\\WheelList.cs",
+              "RelativeToolTip": "..\\Domain\\Wheel\\WheelList.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-14T16:46:52.604Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
