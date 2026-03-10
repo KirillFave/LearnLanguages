@@ -5,6 +5,12 @@
     gap: 10px;
 }
 
+#new-wheel-list-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #wheel {
     width: calc(100% - 300px);
     display: flex;
@@ -65,10 +71,9 @@ canvas {
     background-size: 300%;
     background-position: left center;
     transition: background .3s ease;
-    width: 50%;
+    width: 30%;
     justify-self: right;
 }
-
 
 #change-view-mode-btn:hover {
     background-size: 320%;
@@ -77,6 +82,29 @@ canvas {
 
 #change-view-mode-btn:focus {
     box-shadow: none;
+}
+
+.as-not-show-to-pupil {
+    display: none !important;
+}
+
+.as-not-show-to-admin {
+    display: none !important;
+}
+
+#new-list-item-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-item-definition {
+    color: #777;
 }
 
 .sector-badge {

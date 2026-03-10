@@ -74,7 +74,7 @@
     ];
 
     drawWheel(angle = 0) {
-        const items = document.getElementById('items').querySelectorAll('li');
+        const items = document.getElementById('items').querySelectorAll('.list-item > .list-item-word');
         const count = items.length;
         const anglePerSector = (Math.PI * 2) / count;
         const radius = this.canvas.width / 2;
@@ -122,7 +122,7 @@
             this.ctx.shadowBlur = 6;
             this.ctx.shadowOffsetX = 1;
             this.ctx.shadowOffsetY = 1;
-            this.ctx.fillText(item.innerHTML, radius * 0.65, 0);
+            this.ctx.fillText(item.textContent.trim(), radius * 0.65, 0);
             this.ctx.restore();
         }
 
@@ -185,11 +185,27 @@
     }
 
     changeViewModeToPupil() {
+        const changeViewModeBtn = document.getElementById('change-view-mode-btn');
+        changeViewModeBtn.querySelector('span').textContent = 'Ученик';
+        changeViewModeBtn.onclick = () => this.changeViewModeToAdmin();
 
+        document.getElementById('new-wheel-list-input').classList.add('as-not-show-to-pupil');
+        document.getElementById('new-list-item-input').classList.add('as-not-show-to-pupil');
+
+        document.querySelectorAll('.as-not-show-to-admin')
+            .forEach(element => element.classList.remove('as-not-show-to-admin'));
     }
 
     changeViewModeToAdmin() {
+        const changeViewModeBtn = document.getElementById('change-view-mode-btn');
+        changeViewModeBtn.querySelector('span').textContent = 'Учитель';
+        changeViewModeBtn.onclick = () => this.changeViewModeToPupil();
 
+
+        document.getElementById('wheel-speen-btns-group').classList.add('as-not-show-to-admin');
+
+        document.querySelectorAll('.as-not-show-to-pupil')
+            .forEach(element => element.classList.remove('as-not-show-to-pupil'));
     }
 }
 

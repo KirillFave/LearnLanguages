@@ -48,10 +48,6 @@ public class WheelModel(
     {
         WheelItem item = listRepository.AddItem(listGuid, title, definition);
 
-        string rendered = viewRendererService.RenderViewToStringAsync("_WheelItem", item)
-            .GetAwaiter()
-            .GetResult();
-
-        return new OkObjectResult(rendered);
+        return Partial("_WheelItem", item);
     }
 }

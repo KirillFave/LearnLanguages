@@ -2,4 +2,11 @@
 
 @model WheelItem
 
-<li class="list-group-item">@Model.Title</li>
+<li class="list-item list-group-item">
+    <span class="list-item-word">
+        @Model.Title
+    </span>
+    <span class="list-item-definition">
+        @Model.Definition
+    </span>
+</li>
