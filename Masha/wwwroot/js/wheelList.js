@@ -184,6 +184,13 @@
         this.animationFrame = requestAnimationFrame(this.step);
     }
 
+    changeViewModeToPupil() {
+
+    }
+
+    changeViewModeToAdmin() {
+
+    }
 }
 
 window.wheelList = new WheelList();

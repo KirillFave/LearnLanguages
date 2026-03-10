@@ -30,6 +30,12 @@
 
     <div class="card border-0 shadow-lg overflow-hidden bg-white w-50">
         <div class="card-body p-4 d-flex flex-column gap-2">
+            <button id="change-view-mode-btn"
+                    class="btn btn-sm"
+                    onclick="wheelList.changeViewModeToPupil()">
+                <span>Учитель</span>
+            </button>
+
             <div class="card">
                 <ul id="items" class="list-group list-group-flush">
                     @foreach(WheelItem item in Model.Items!)
