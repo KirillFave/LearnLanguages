@@ -194,6 +194,9 @@
 
         document.querySelectorAll('.as-not-show-to-admin')
             .forEach(element => element.classList.remove('as-not-show-to-admin'));
+
+        document.querySelectorAll('.list-item-definition')
+            .forEach(element => element.classList.add('as-not-show-to-pupil'));
     }
 
     changeViewModeToAdmin() {
