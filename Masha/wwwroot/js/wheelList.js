@@ -186,13 +186,13 @@
 
     updateCurrentSectorLabel() {
         const idx = this.getCurrentSectorIndex();
-        const items = document.getElementById('items').querySelectorAll('.list-item > .list-item-word');
+        const items = document.getElementById('items').querySelectorAll('.list-item');
         const item = items[idx];
-        lastSectorLabel.textContent = item.textContent;
+        lastSectorLabel.textContent = item.querySelector(':scope > .list-item-word').textContent;
     }
 
     getCurrentSectorIndex() {
-        const items = document.getElementById('items').querySelectorAll('.list-item > .list-item-word');
+        const items = document.getElementById('items').querySelectorAll('.list-item');
         const count = items.length;
 
         if (count === 0) return -1;
@@ -203,7 +203,7 @@
         // Угол относительно начала секторов: каждый сектор i занимает [i*step + rot, (i+1)*step + rot)
         const step = (2 * Math.PI) / count;
         // Приведём угол в диапазон [0, 2PI)
-        let rawAngle = (markerAngle - this.rotationAngle + 2 * Math.PI) % (2 * Math.PI);
+        let rawAngle = ((markerAngle - this.rotationAngle) % (2 * Math.PI) + 2 * Math.PI) % (2 * Math.PI);
         // rawAngle теперь показывает смещение от начала 0-го сектора
         let index = Math.floor(rawAngle / step);
         // защита от погрешности плавающей
