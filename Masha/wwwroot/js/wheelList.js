@@ -171,7 +171,7 @@
                 this.animationFrame = null;
             }
             // финальное обновление метки
-            //updateCurrentSectorLabel();
+            this.updateCurrentSectorLabel();
             return;
         }
 
@@ -182,6 +182,33 @@
 
         // продолжаем анимацию
         this.animationFrame = requestAnimationFrame(this.step);
+    }
+
+    updateCurrentSectorLabel() {
+        const idx = this.getCurrentSectorIndex();
+        const items = document.getElementById('items').querySelectorAll('.list-item > .list-item-word');
+        const item = items[idx];
+        lastSectorLabel.textContent = item.textContent;
+    }
+
+    getCurrentSectorIndex() {
+        const items = document.getElementById('items').querySelectorAll('.list-item > .list-item-word');
+        const count = items.length;
+
+        if (count === 0) return -1;
+        // маркер находится строго вверх (угол -90° = -PI/2)
+        // но учитываем rotationAngle, нужно нормализовать
+        // Направление маркера: 12 часов = -PI/2 (или 3*PI/2)
+        const markerAngle = -Math.PI / 2; // фикс. направление вверх
+        // Угол относительно начала секторов: каждый сектор i занимает [i*step + rot, (i+1)*step + rot)
+        const step = (2 * Math.PI) / count;
+        // Приведём угол в диапазон [0, 2PI)
+        let rawAngle = (markerAngle - this.rotationAngle + 2 * Math.PI) % (2 * Math.PI);
+        // rawAngle теперь показывает смещение от начала 0-го сектора
+        let index = Math.floor(rawAngle / step);
+        // защита от погрешности плавающей
+        if (index >= count) index = count - 1;
+        return index;
     }
 
     changeViewModeToPupil() {
