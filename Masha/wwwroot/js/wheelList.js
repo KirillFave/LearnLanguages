@@ -74,7 +74,7 @@
     ];
 
     drawWheel(angle = 0) {
-        const items = document.getElementById('items').querySelectorAll('.list-item > .list-item-word');
+        const items = document.getElementById('items').querySelectorAll('.list-item:not(.answered) > .list-item-word');
         const count = items.length;
         const anglePerSector = (Math.PI * 2) / count;
         const radius = this.canvas.width / 2;
@@ -170,8 +170,11 @@
                 cancelAnimationFrame(this.animationFrame);
                 this.animationFrame = null;
             }
-            // финальное обновление метки
-            this.updateCurrentSectorLabel();
+
+            const idx = this.getCurrentSectorIndex();
+            this.updateCurrentSectorLabel(idx);
+            this.setListItemAsAnswered(idx);
+            this.drawWheel(this.rotationAngle);
             return;
         }
 
@@ -184,15 +187,14 @@
         this.animationFrame = requestAnimationFrame(this.step);
     }
 
-    updateCurrentSectorLabel() {
-        const idx = this.getCurrentSectorIndex();
+    updateCurrentSectorLabel(idx) {
         const items = document.getElementById('items').querySelectorAll('.list-item');
         const item = items[idx];
         lastSectorLabel.textContent = item.querySelector(':scope > .list-item-word').textContent;
     }
 
     getCurrentSectorIndex() {
-        const items = document.getElementById('items').querySelectorAll('.list-item');
+        const items = document.getElementById('items').querySelectorAll('.list-item:not(.answered)');
         const count = items.length;
 
         if (count === 0) return -1;
@@ -209,6 +211,10 @@
         // защита от погрешности плавающей
         if (index >= count) index = count - 1;
         return index;
+    }
+
+    setListItemAsAnswered(idx) {
+        document.getElementById('items').querySelectorAll('.list-item:not(.answered)')[idx].classList.add('answered');
     }
 
     changeViewModeToPupil() {

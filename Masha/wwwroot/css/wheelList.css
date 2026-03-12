@@ -103,6 +103,10 @@ canvas {
     justify-content: space-between;
 }
 
+.list-item.answered {
+    background-color: lightgreen;
+}
+
 .list-item-definition {
     color: #777;
 }
