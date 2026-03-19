@@ -125,3 +125,7 @@ canvas {
         padding: 0.5rem 1rem;
     }
 }
+
+#modal-definition.blur {
+    filter: blur(4px);
+}

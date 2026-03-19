@@ -35,3 +35,33 @@
 
 </div>
 
+<div id="wheel-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 id="modal-word"
+                    class="modal-title">
+                    Word here
+                </h5>
+            </div>
+            <div id="modal-definition"
+                 class="modal-body blur">
+                Definition here
+            </div>
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-primary"
+                        id="open-definition-btn"
+                        onclick="wheelList.openDefinition()">
+                    Open definition
+                </button>
+                <button type="button"
+                        id="modal-close-btn"
+                        class="btn btn-secondary d-none"
+                        onclick="wheelList.hideModal()">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

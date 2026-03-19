@@ -172,6 +172,7 @@
             }
 
             const idx = this.getCurrentSectorIndex();
+            this.showModal(idx);
             this.updateCurrentSectorLabel(idx);
             this.setListItemAsAnswered(idx);
             this.drawWheel(this.rotationAngle);
@@ -215,6 +216,35 @@
 
     setListItemAsAnswered(idx) {
         document.getElementById('items').querySelectorAll('.list-item:not(.answered)')[idx].classList.add('answered');
+    }
+
+    modal = null;
+
+    showModal(idx) {
+        const listItem = document.getElementById('items').querySelectorAll('.list-item:not(.answered)')[idx];
+        const word = listItem.querySelector('.list-item-word').textContent;
+        const definition = listItem.querySelector('.list-item-definition').textContent;
+
+        document.getElementById('modal-word').textContent = word;
+        document.getElementById('modal-definition').textContent = definition;
+
+        var modalElement = document.getElementById('wheel-modal');
+        this.modal = new bootstrap.Modal(modalElement);
+        this.modal.show();
+    }
+
+    openDefinition() {
+        document.getElementById('modal-definition').classList.remove('blur');
+        document.getElementById('open-definition-btn').classList.add('d-none');
+        document.getElementById('modal-close-btn').classList.remove('d-none');
+    }
+
+    hideModal() {
+        document.getElementById('modal-definition').classList.add('blur');
+        document.getElementById('open-definition-btn').classList.remove('d-none');
+        document.getElementById('modal-close-btn').classList.add('d-none');
+        this.modal.hide();
+        }
     }
 
     changeViewModeToPupil() {
