@@ -9,7 +9,20 @@ public class WheelItemRepository(DatabaseContext databaseContext)
         return databaseContext.WheelItems.Find(guid) ?? throw new ArgumentException();
     }
 
-    public void Deactivate(Guid guid)
+    public void Enable(Guid guid)
+    {
+        WheelItem item = GetById(guid);
+
+        if (!item.IsInactive)
+        {
+            return;
+        }
+
+        item.IsInactive = false;
+        databaseContext.SaveChanges();
+    }
+
+    public void Disable(Guid guid)
     {
         WheelItem item = GetById(guid);
 

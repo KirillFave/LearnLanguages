@@ -1,6 +1,7 @@
 using DataAccess.Repositories.Wheel;
 using Domain.Wheel;
 using Masha.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -47,5 +48,17 @@ public class WheelModel(
         WheelItem item = listRepository.AddItem(listGuid, title, definition);
 
         return Partial("_WheelItem", item);
+    }
+
+    public IActionResult OnPostEnableItem(Guid guid)
+    {
+        itemRepository.Enable(guid);
+        return new NoContentResult();
+    }
+
+    public IActionResult OnPostDisableItem(Guid guid)
+    {
+        itemRepository.Disable(guid);
+        return new NoContentResult();
     }
 }

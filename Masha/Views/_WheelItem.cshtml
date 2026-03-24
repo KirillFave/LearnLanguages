@@ -2,11 +2,28 @@
 
 @model WheelItem
 
-<li class="list-item list-group-item">
+<li id="list-item_@Model.Guid"
+    class="list-item list-group-item @(Model.IsInactive ? "not-active" : "")">
     <span class="list-item-word">
         @Model.Title
     </span>
     <span class="list-item-definition">
         @Model.Definition
     </span>
+
+    @if (Model.IsInactive)
+    {
+        <input class="form-check-input word-is-active"
+               type="checkbox"
+               value=""
+               onclick="wheelList.enableItem('@Model.Guid')">
+    }
+    else 
+    {
+        <input class="form-check-input word-is-active"
+               type="checkbox"
+               value=""
+               onclick="wheelList.disableItem('@Model.Guid')"
+               checked>
+    }
 </li>

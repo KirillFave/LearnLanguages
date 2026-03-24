@@ -52,6 +52,48 @@
         });
     }
 
+    enableItem(guid) {
+        $.ajax({
+            url: '/Wheel?handler=EnableItem',
+            method: 'POST',
+            data: {
+                guid: guid,
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+            }
+        })
+        .then((response) => {
+            const listItem = document.getElementById(`list-item_${guid}`);
+            listItem.classList.remove('not-active');
+
+            const isActiveCheckbox = listItem.querySelector('input.word-is-active');
+            isActiveCheckbox.checked = true;
+            isActiveCheckbox.onclick = () => this.disableItem(guid);
+
+            this.drawWheel();
+        });
+    }
+
+    disableItem(guid) {
+        $.ajax({
+            url: '/Wheel?handler=DisableItem',
+            method: 'POST',
+            data: {
+                guid: guid,
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+            }
+        })
+            .then((response) => {
+                const listItem = document.getElementById(`list-item_${guid}`);
+                listItem.classList.add('not-active');
+
+                const isActiveCheckbox = listItem.querySelector('input.word-is-active');
+                isActiveCheckbox.checked = false;
+                isActiveCheckbox.onclick = () => this.enableItem(guid);
+
+                this.drawWheel();
+            });
+    }
+
     canvas = NaN;
     ctx = NaN;
     spinBtn = NaN;
@@ -74,7 +116,8 @@
     ];
 
     drawWheel(angle = 0) {
-        const items = document.getElementById('items').querySelectorAll('.list-item:not(.answered) > .list-item-word');
+        const items = document.getElementById('items')
+            .querySelectorAll('.list-item:not(.answered):not(.not-active) > .list-item-word');
         const count = items.length;
         const anglePerSector = (Math.PI * 2) / count;
         const radius = this.canvas.width / 2;
@@ -189,13 +232,15 @@
     }
 
     updateCurrentSectorLabel(idx) {
-        const items = document.getElementById('items').querySelectorAll('.list-item');
+        const items = document.getElementById('items')
+            .querySelectorAll('.list-item:not(.answered):not(.not-active)');
         const item = items[idx];
         lastSectorLabel.textContent = item.querySelector(':scope > .list-item-word').textContent;
     }
 
     getCurrentSectorIndex() {
-        const items = document.getElementById('items').querySelectorAll('.list-item:not(.answered)');
+        const items = document.getElementById('items')
+            .querySelectorAll('.list-item:not(.answered):not(.not-active) > .list-item-word');
         const count = items.length;
 
         if (count === 0) return -1;
@@ -215,13 +260,16 @@
     }
 
     setListItemAsAnswered(idx) {
-        document.getElementById('items').querySelectorAll('.list-item:not(.answered)')[idx].classList.add('answered');
+        document.getElementById('items')
+            .querySelectorAll('.list-item:not(.answered):not(.not-active)')[idx]
+            .classList.add('answered');
     }
 
     modal = null;
 
     showModal(idx) {
-        const listItem = document.getElementById('items').querySelectorAll('.list-item:not(.answered)')[idx];
+        const listItem = document.getElementById('items')
+            .querySelectorAll('.list-item:not(.answered):not(.not-active)')[idx];
         const word = listItem.querySelector('.list-item-word').textContent;
         const definition = listItem.querySelector('.list-item-definition').textContent;
 
@@ -258,7 +306,13 @@
         document.querySelectorAll('.as-not-show-to-admin')
             .forEach(element => element.classList.remove('as-not-show-to-admin'));
 
+        document.querySelectorAll('.list-item.not-active')
+            .forEach(element => element.classList.add('as-not-show-to-pupil'));
+
         document.querySelectorAll('.list-item-definition')
+            .forEach(element => element.classList.add('as-not-show-to-pupil'));
+
+        document.querySelectorAll('input.word-is-active')
             .forEach(element => element.classList.add('as-not-show-to-pupil'));
     }
 
