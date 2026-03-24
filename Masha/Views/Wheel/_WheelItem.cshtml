@@ -4,10 +4,14 @@
 
 <li id="list-item_@Model.Guid"
     class="list-item list-group-item @(Model.IsInactive ? "not-active" : "")">
-    <span class="list-item-word">
+    <span class="list-item-word"
+          data-bs-toggle="tooltip"
+          title="@Model.Title">
         @Model.Title
     </span>
-    <span class="list-item-definition @(Model.ViewMode == ViewMode.Pupil ? "as-not-show-to-pupil" : "")">
+    <span class="list-item-definition @(Model.ViewMode == ViewMode.Pupil ? "as-not-show-to-pupil" : "")"
+          data-bs-toggle="tooltip"
+          title="@Model.Definition">
         @Model.Definition
     </span>
 

@@ -10,8 +10,9 @@
                 __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
             }
         })
-        .then((response) =>
-            document.getElementById('wheel').outerHTML = response);
+        .then((response) => {
+            document.getElementById('wheel').outerHTML = response;
+        });
     }
 
     getListPartialView(guid) {
@@ -52,6 +53,7 @@
             titleInput.value = '';
             definitionInput.value = '';
             this.drawWheel();
+            enableAllTooltips();
         });
     }
 
@@ -356,6 +358,7 @@ document.addEventListener('change', function (event) {
                 wheelList.ctx = wheelList.canvas.getContext('2d');
 
                 wheelList.drawWheel();
+                enableAllTooltips();
             });
         
         return;

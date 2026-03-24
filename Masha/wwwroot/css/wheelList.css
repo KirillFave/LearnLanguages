@@ -101,14 +101,27 @@ canvas {
 .list-item {
     display: flex;
     justify-content: space-between;
+    height: 40px;
+    line-height: 40px;
+    overflow: clip;
+    padding: 0 8px;
 }
 
 .list-item.answered {
     background-color: lightgreen;
 }
 
+.list-item-word {
+    width: 30%;
+}
+
 .list-item-definition {
+    width: 60%;
     color: #777;
+}
+
+input.word-is-active {
+    margin-top: 11px;
 }
 
 .sector-badge {
