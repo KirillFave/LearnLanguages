@@ -5,3 +5,6 @@
 /DataAccess/obj
 /Domain/bin
 /Domain/obj
+Masha/Masha.db
+Masha/Masha.db-wal
+Masha/Masha.db-shm
