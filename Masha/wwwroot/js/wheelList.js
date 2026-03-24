@@ -15,11 +15,14 @@
     }
 
     getListPartialView(guid) {
+        const viewMode = document.getElementById('change-view-mode-btn').dataset.currentViewMode;
+
         return $.ajax({
             url: '/Wheel?handler=ListPartialView',
             method: 'GET',
             data: {
                 guid: guid,
+                viewMode: viewMode,
                 __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
             }
         });
@@ -306,9 +309,13 @@
         const changeViewModeBtn = document.getElementById('change-view-mode-btn');
         changeViewModeBtn.querySelector('span').textContent = 'Ученик';
         changeViewModeBtn.onclick = () => this.changeViewModeToAdmin();
+        changeViewModeBtn.dataset.currentViewMode = '2';
 
-        document.getElementById('new-wheel-list-input').classList.add('as-not-show-to-pupil');
-        document.getElementById('new-list-item-input').classList.add('as-not-show-to-pupil');
+        var element = document.getElementById('new-wheel-list-input');
+        if (element) element.classList.add('as-not-show-to-pupil');
+
+        element = document.getElementById('new-list-item-input');
+        if (element) element.classList.add('as-not-show-to-pupil');
 
         document.querySelectorAll('.as-not-show-to-admin')
             .forEach(element => element.classList.remove('as-not-show-to-admin'));
@@ -327,9 +334,10 @@
         const changeViewModeBtn = document.getElementById('change-view-mode-btn');
         changeViewModeBtn.querySelector('span').textContent = 'Учитель';
         changeViewModeBtn.onclick = () => this.changeViewModeToPupil();
+        changeViewModeBtn.dataset.currentViewMode = '1';
 
-
-        document.getElementById('wheel-speen-btns-group').classList.add('as-not-show-to-admin');
+        var element = document.getElementById('wheel-speen-btns-group');
+        if (element) element.classList.add('as-not-show-to-admin');
 
         document.querySelectorAll('.as-not-show-to-pupil')
             .forEach(element => element.classList.remove('as-not-show-to-pupil'));

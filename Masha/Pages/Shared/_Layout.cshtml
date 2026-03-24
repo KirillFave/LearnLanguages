@@ -27,6 +27,12 @@
                         </li>
                     </ul>
                 </div>
+                <button id="change-view-mode-btn"
+                        class="btn btn-sm"
+                        data-current-view-mode="@((int) ViewModels.Wheel.ViewMode.Teacher)"
+                        onclick="wheelList.changeViewModeToPupil()">
+                    <span>Учитель</span>
+                </button>
             </div>
         </nav>
     </header>

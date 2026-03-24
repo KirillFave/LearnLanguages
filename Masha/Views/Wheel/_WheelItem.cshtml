@@ -1,0 +1,19 @@
+﻿@using Masha.ViewModels.Wheel
+
+@model WheelItemVM
+
+<li id="list-item_@Model.Guid"
+    class="list-item list-group-item @(Model.IsInactive ? "not-active" : "")">
+    <span class="list-item-word">
+        @Model.Title
+    </span>
+    <span class="list-item-definition @(Model.ViewMode == ViewMode.Pupil ? "as-not-show-to-pupil" : "")">
+        @Model.Definition
+    </span>
+
+    <input class="form-check-input word-is-active @(Model.ViewMode == ViewMode.Pupil ? "as-not-show-to-pupil" : "")"
+           type="checkbox"
+           value=""
+           onclick="wheelList.@(Model.IsInactive ? "enableItem" : "disableItem")('@Model.Guid')"
+           @(Model.IsInactive ? "" : "checked")>
+</li>
