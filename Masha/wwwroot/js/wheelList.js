@@ -292,6 +292,13 @@
         document.getElementById('open-definition-btn').classList.remove('d-none');
         document.getElementById('modal-close-btn').classList.add('d-none');
         this.modal.hide();
+
+        const notAnsweredCount = document.getElementById('items')
+            .querySelectorAll('.list-item:not(.answered):not(.not-active)').length;
+        if (notAnsweredCount == 1) {
+            this.showModal(0);
+            this.updateCurrentSectorLabel(0);
+            this.setListItemAsAnswered(0);
         }
     }
 
