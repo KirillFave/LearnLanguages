@@ -9,6 +9,21 @@ public class WheelItemRepository(DatabaseContext databaseContext)
         return databaseContext.WheelItems.Find(guid) ?? throw new ArgumentException();
     }
 
+    public WheelItem Edit(Guid guid, string title, string definition)
+    {
+        WheelItem item = GetById(guid);
+
+        if (item.Title.Equals(title) && item.Definition.Equals(definition))
+        {
+            return item;
+        }
+
+        item.Title = title;
+        item.Definition = definition;
+        databaseContext.SaveChanges();
+        return item;
+    }
+
     public void Enable(Guid guid)
     {
         WheelItem item = GetById(guid);

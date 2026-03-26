@@ -10,7 +10,6 @@ namespace Masha.Pages;
 
 [IgnoreAntiforgeryToken]
 public class WheelModel(
-    ViewRendererService viewRendererService,
     WheelListRepository listRepository,
     WheelItemRepository itemRepository
 ) : PageModel
@@ -39,6 +38,13 @@ public class WheelModel(
     public IActionResult OnPostAddItem(Guid listGuid, string title, string definition)
     {
         WheelItem item = listRepository.AddItem(listGuid, title, definition);
+        WheelItemVM itemVM = new(item, ViewMode.Teacher);
+        return Partial("~/Views/Wheel/_WheelItem.cshtml", itemVM);
+    }
+
+    public IActionResult OnPostEditItem(Guid itemGuid, string title, string definition)
+    {
+        WheelItem item = itemRepository.Edit(itemGuid, title, definition);
         WheelItemVM itemVM = new(item, ViewMode.Teacher);
         return Partial("~/Views/Wheel/_WheelItem.cshtml", itemVM);
     }

@@ -344,6 +344,48 @@
         document.querySelectorAll('.as-not-show-to-pupil')
             .forEach(element => element.classList.remove('as-not-show-to-pupil'));
     }
+
+    editModal = null;
+
+    showEditModal(target) {
+        const viewMode = document.getElementById('change-view-mode-btn').dataset.currentViewMode;
+        if (viewMode != 1) return;
+
+        document.getElementById('edit-modal-input-title').value = target.dataset.value;
+        document.getElementById('edit-modal-input-definition').value =
+            target.parentNode.querySelector('.list-item-definition').dataset.value;
+        
+        var modalElement = document.getElementById('edit-modal');
+        modalElement.dataset.editingListItemGuid = target.dataset.listItemGuid;
+        this.editModal = new bootstrap.Modal(modalElement);
+        this.editModal.show();
+    }
+
+    saveEdit() {
+        var modalElement = document.getElementById('edit-modal');
+        const listItemGuid = modalElement.dataset.editingListItemGuid;
+        const title = document.getElementById('edit-modal-input-title').value.trim();
+        const definition = document.getElementById('edit-modal-input-definition').value.trim();
+
+        $.ajax({
+            url: '/Wheel?handler=EditItem',
+            method: 'POST',
+            data: {
+                itemGuid: listItemGuid,
+                title: title,
+                definition: definition,
+                __RequestVerificationToken: $('input[name="__RequestVerificationToken"]').val()
+            }
+        })
+            .then((response) => {
+                const listItem = document.getElementById(`list-item_${listItemGuid}`);
+                listItem.outerHTML = response;
+
+                this.drawWheel();
+                enableAllTooltips();
+                this.editModal.hide();
+            });
+    }
 }
 
 window.wheelList = new WheelList();

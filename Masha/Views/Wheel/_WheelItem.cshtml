@@ -6,12 +6,16 @@
     class="list-item list-group-item @(Model.IsInactive ? "not-active" : "")">
     <span class="list-item-word"
           data-bs-toggle="tooltip"
-          title="@Model.Title">
+          title="@Model.Title"
+          data-list-item-guid="@Model.Guid"
+          data-value="@Model.Title"
+          onclick="wheelList.showEditModal(this)">
         @Model.Title
     </span>
     <span class="list-item-definition @(Model.ViewMode == ViewMode.Pupil ? "as-not-show-to-pupil" : "")"
           data-bs-toggle="tooltip"
-          title="@Model.Definition">
+          title="@Model.Definition"
+          data-value="@Model.Definition">
         @Model.Definition
     </span>
 

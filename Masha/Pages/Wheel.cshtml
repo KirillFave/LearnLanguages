@@ -65,3 +65,35 @@
         </div>
     </div>
 </div>
+
+
+<div id="edit-modal"
+     class="modal"
+     tabindex="-1"
+     data-editing-list-item-guid="">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Title</label>
+                <div class="col-sm-10">
+                    <input id="edit-modal-input-title"
+                           class="form-control"
+                           type="text">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputPassword" class="col-sm-2 col-form-label">Definition</label>
+                <div class="col-sm-10">
+                    <input id="edit-modal-input-definition"
+                           class="form-control"
+                           type="text">
+                </div>
+            </div>
+            <button type="button"
+                    class="btn btn-primary"
+                    onclick="wheelList.saveEdit()">
+                Сохранить
+            </button>
+        </div>
+    </div>
+</div>

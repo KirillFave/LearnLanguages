@@ -142,3 +142,7 @@ input.word-is-active {
 #modal-definition.blur {
     filter: blur(4px);
 }
+
+#edit-modal .modal-content {
+    padding: 16px;
+}
