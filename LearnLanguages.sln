@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{ABE653E0-9D70-4831-B18D-D259D4A1941B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Masha", "Masha\Masha.csproj", "{30E45F00-6517-49C6-B9EE-DC4365D9B71A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{F08E3F34-0DF3-4538-8DE4-BA660360B2BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{ABE653E0-9D70-4831-B18D-D259D4A1941B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABE653E0-9D70-4831-B18D-D259D4A1941B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABE653E0-9D70-4831-B18D-D259D4A1941B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{30E45F00-6517-49C6-B9EE-DC4365D9B71A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{30E45F00-6517-49C6-B9EE-DC4365D9B71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{30E45F00-6517-49C6-B9EE-DC4365D9B71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{30E45F00-6517-49C6-B9EE-DC4365D9B71A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08E3F34-0DF3-4538-8DE4-BA660360B2BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08E3F34-0DF3-4538-8DE4-BA660360B2BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08E3F34-0DF3-4538-8DE4-BA660360B2BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08E3F34-0DF3-4538-8DE4-BA660360B2BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

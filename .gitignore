@@ -1,10 +1,10 @@
 /.vs
-/Masha/bin
-/Masha/obj
 /DataAccess/bin
 /DataAccess/obj
 /Domain/bin
 /Domain/obj
-Masha/Masha.db
-Masha/Masha.db-wal
-Masha/Masha.db-shm
+LearnLanguages/LearnLanguages.db
+LearnLanguages/LearnLanguages.db-wal
+MashLearnLanguages/LearnLanguages.db-shm
+/WebApp/bin
+/WebApp/obj

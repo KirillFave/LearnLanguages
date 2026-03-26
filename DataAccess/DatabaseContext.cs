@@ -29,6 +29,6 @@ public class DatabaseContext : DbContext
     {
         optionsBuilder
             .UseLazyLoadingProxies()
-            .UseSqlite("Data Source=Masha.db");
+            .UseSqlite("Data Source=LearnLanguages.db");
     }
 }
