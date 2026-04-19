@@ -1,0 +1,29 @@
+﻿@page
+@using WebApp.ViewModels.Schemes
+
+@model SchemesModel
+@{
+    ViewData["Title"] = "Схемы";
+}
+
+@section Scripts {
+    <script src="js/schemes.js" asp-append-version="true"></script>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/schemes.css" asp-append-version="true" />
+}
+
+<div class="grid-container">
+    @for (int row = 0; row < 9; row++)
+    {
+        @for (int col = 0; col < 15; col++)
+        {
+            string cellContent = $"{(char)('A' + col)}{row + 1}";
+
+            <div class="grid-item">
+                @cellContent
+            </div>
+        }
+    }
+</div>
