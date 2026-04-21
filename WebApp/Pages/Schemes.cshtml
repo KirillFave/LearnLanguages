@@ -15,20 +15,6 @@
     <link rel="stylesheet" href="~/css/addSchemeItemPopover.css" asp-append-version="true" />
 }
 
-<div class="grid-container">
-    @for (int row = 1; row <= 9; row++)
-    {
-        @for (int column = 1; column <= 15; column++)
-        {
-            string cellContent = $"{(char)('A' + column - 1)}{row}";
-
-            <div class="grid-item scheme-item"
-                 data-row="@row"
-                 data-column="@column">
-                @cellContent
-            </div>
-        }
-    }
-</div>
+@await Html.PartialAsync("~/Views/Schemes/_Scheme.cshtml", Model.SchemeVM)
 
 @await Html.PartialAsync("~/Views/Schemes/_AddSchemeItemPopover.cshtml")

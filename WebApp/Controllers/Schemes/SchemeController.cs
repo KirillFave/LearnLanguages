@@ -9,6 +9,13 @@ namespace WebApp.Controllers.Schemes;
 public class SchemeController(
     SchemeRepository schemeRepository) : ControllerBase
 {
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        IEnumerable<Scheme> schemes = schemeRepository.GetAll();
+        return Ok(schemes);
+    }
+
     [HttpPost]
     public async Task<IActionResult> Add(string name)
     {
