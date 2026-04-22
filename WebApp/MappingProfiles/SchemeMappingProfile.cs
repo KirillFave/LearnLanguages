@@ -8,6 +8,9 @@ public class SchemeMappingProfile : Profile
 {
     public SchemeMappingProfile()
     {
-        CreateMap<Scheme, SchemeVM>();
+        CreateMap<Scheme, SchemeVM>()
+            .ForMember(
+                dest => dest.ItemVMs,
+                opt => opt.MapFrom(src => src.Items));
     }
 }

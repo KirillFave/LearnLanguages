@@ -2,6 +2,8 @@ using DataAccess;
 using DataAccess.Repositories.Wheel;
 using Masha.Services;
 using Microsoft.Build.Execution;
+using Microsoft.Extensions.DependencyInjection;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,10 @@ builder.Services.AddScoped<WheelListRepository>();
 builder.Services.AddScoped<WheelItemRepository>();
 builder.Services.AddScoped<SchemeRepository>();
 builder.Services.AddScoped<SchemeItemRepository>();
+
+builder.Services.AddAutoMapper(
+    cfg => { },
+    Assembly.GetExecutingAssembly());
 
 // Add services to the container.
 builder.Services.AddRazorPages();

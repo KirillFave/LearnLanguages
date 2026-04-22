@@ -1,3 +1,4 @@
+using AutoMapper;
 using DataAccess.Repositories.Wheel;
 using Domain.Schemes;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +9,8 @@ namespace Masha.Pages;
 
 [IgnoreAntiforgeryToken]
 public class SchemesModel(
-    SchemeRepository schemeRepository
+    SchemeRepository schemeRepository,
+    IMapper mapper
 ) : PageModel
 {
     public SchemeVM SchemeVM { get; set; } = null!;
@@ -16,6 +18,8 @@ public class SchemesModel(
     public async Task<IActionResult> OnGet(Guid schemeGuid)
     {
         Scheme scheme = await schemeRepository.GetByIdAsync(schemeGuid);
+
+        SchemeVM = mapper.Map<SchemeVM>(scheme);
 
         return Page();
     }
