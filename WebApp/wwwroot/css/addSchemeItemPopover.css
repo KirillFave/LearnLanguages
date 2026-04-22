@@ -97,3 +97,9 @@
 .form .close {
     display: none;
 }
+
+#color-input {
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+}
