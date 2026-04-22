@@ -18,4 +18,4 @@
 
 @await Html.PartialAsync("~/Views/Schemes/_Scheme.cshtml", Model.SchemeVM)
 
-@await Html.PartialAsync("~/Views/Schemes/_AddSchemeItemPopover.cshtml")
+@await Html.PartialAsync("~/Views/Schemes/_AddSchemeItemPopover.cshtml", Model.SchemeVM.Guid)

@@ -24,7 +24,9 @@
 
         addSchemeItemPopover.style.top = top + 'px';
         addSchemeItemPopover.style.left = left + 'px';
-        
+
+        document.getElementById('input-row').value = row;
+        document.getElementById('input-column').value = column;
 
         addSchemeItemPopover.classList.remove('d-none');
     }
