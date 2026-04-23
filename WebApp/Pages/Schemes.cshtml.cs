@@ -2,8 +2,10 @@ using AutoMapper;
 using DataAccess.Repositories.Wheel;
 using Domain.Schemes;
 using Domain.Schemes.Dto;
+using Masha.ViewModels.Wheel;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
 using WebApp.ViewModels.Schemes;
 
 namespace Masha.Pages;
@@ -31,7 +33,8 @@ public class SchemesModel(
 
     public IActionResult OnPostAddItem()
     {
-        schemeItemRepository.Add(AddSchemeItemDto);
-        return Page();
+        SchemeItem schemeItem = schemeItemRepository.Add(AddSchemeItemDto);
+        SchemeItemVM VM = mapper.Map<SchemeItemVM>(schemeItem);
+        return Partial("~/Views/Schemes/_SchemeItemBadge.cshtml", VM);
     }
 }

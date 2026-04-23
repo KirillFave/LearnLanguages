@@ -1,0 +1,17 @@
+﻿@using WebApp.ViewModels.Schemes
+
+@model SchemeItemVM
+
+<div class="scheme-item-badge"
+     style="border-color: @Model.Color">
+    @Model.Title
+    <div class="scheme-item-card" 
+         style="border-color: @Model.Color; background-color: @Model.Color;">
+        <div class="title">
+            @Model.Title
+        </div>
+        <div class="text">
+            @Model.Text
+        </div>
+    </div>
+</div>

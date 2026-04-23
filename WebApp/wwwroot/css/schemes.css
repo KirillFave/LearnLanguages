@@ -4,8 +4,7 @@
     grid-template-rows: repeat(9, 1fr); /* 9 равных строк */
     width: 100%;
     height: calc(100vh - 72px);
-    gap: 1px; /* зазор = граница */
-    background-color: #ccc; /* цвет «границ» (виден в зазорах) */
+    gap: 3px; /* зазор = граница */
 }
 
 .grid-item {
@@ -21,6 +20,40 @@
 }
 
 .grid-item:hover {
-    background-color: #f8f9fa;
+    background-color: #cdcdcd;
     cursor: pointer;
+}
+
+.scheme-item-badge {
+    align-content: center;
+    text-align: center;
+    background: white;
+}
+
+.scheme-item-badge:hover > .scheme-item-card {
+    display: flex;
+}
+
+.scheme-item-card {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    margin-left: -4px;
+    margin-top: -39px
+}
+
+.scheme-item-badge, .scheme-item-card {
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 5px;
+}
+
+.scheme-item-card .title, .scheme-item-card .text {
+    height: 50%;
+    align-content: center;
+    text-align: center;
+    background: white;
 }
