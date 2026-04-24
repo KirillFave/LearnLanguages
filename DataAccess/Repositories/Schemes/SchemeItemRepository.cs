@@ -12,6 +12,7 @@ public class SchemeItemRepository(DatabaseContext databaseContext)
             Guid = Guid.NewGuid(),
             SchemeGuid = dto.SchemeGuid,
             Title = dto.Title,
+            Translation = dto.Translation,
             Text = dto.Text,
             Row = dto.Row,
             Column = dto.Column,

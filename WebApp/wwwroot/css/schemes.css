@@ -51,8 +51,8 @@
     border-radius: 5px;
 }
 
-.scheme-item-card .title, .scheme-item-card .text {
-    height: 50%;
+.scheme-item-card .title, .scheme-item-card .translation, .scheme-item-card .text {
+    height: 33.33%;
     align-content: center;
     text-align: center;
     background: white;
